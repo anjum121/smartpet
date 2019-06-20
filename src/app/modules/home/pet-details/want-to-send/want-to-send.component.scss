@@ -7,7 +7,19 @@ h2 {
   font-weight: 300;
   color: $brandblue;
   font-size: 2.4rem;
+
+  margin-top: 3rem;
+  border-bottom: 1px dashed #dddd;
+  padding-bottom: 1rem;
 }
+
+.section-holder {
+  //   background: #f9f9f9;
+  //   padding: 1rem;
+  //   margin-top: 2rem;
+  //   margin-bottom: 1rem;
+}
+
 
 
 ul {
@@ -31,6 +43,10 @@ ul {
     border-radius: 1rem;
     background: radial-gradient(circle, rgb(236, 239, 253) 0%, rgb(228, 225, 225) 100%);
     transition: all 0.5s ease;
+
+    &:first-child {
+      margin-left: 0;
+    }
 
     &:hover {
       background: radial-gradient(circle, rgb(208, 210, 219) 0%, rgb(196, 196, 196) 100%);
@@ -100,5 +116,10 @@ ul {
 :host ::ng-deep {
   mcf-value-selector mcf-label div.mcf__label {
     padding: .4rem 0 .0rem;
+  }
+
+  .mcf-modal .mcf-modal-header-text {
+    margin: 0;
+    font-size: 2rem;
   }
 }

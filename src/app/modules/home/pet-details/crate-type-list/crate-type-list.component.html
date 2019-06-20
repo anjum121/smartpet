@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let i of _crateTypeInputData" (click)="onSelect(i)" [class.selected]="SelectedItem == i.name">
+    <h3>{{i.series}} <span>{{i.name}}</span></h3>
+    <img src="{{i.img}}" alt="" [ngClass]="i.name">
+    <h4>{{i.weight}} <span>{{i.size}}</span></h4>
+  </li>
+</ul>

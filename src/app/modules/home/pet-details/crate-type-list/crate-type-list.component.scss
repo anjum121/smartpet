@@ -1,0 +1,81 @@
+ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+
+
+  li {
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: .5rem;
+    width: 200px;
+    height: 260px;
+
+    &.selected {
+      background: radial-gradient(circle, #ffffff 50%, #e5e1ff 100%);
+
+    }
+
+    img {
+      width: 50%;
+      text-align: center;
+
+      &.Small {
+        width: 22%;
+      }
+
+      &.Medium {
+        width: 33%;
+      }
+
+      &.Intermediate {
+        width: 43%;
+      }
+
+      &.Large {
+        width: 55%;
+      }
+
+      &.Extra {
+        width: 60%;
+      }
+
+      &.Giant {
+        width: 65%;
+      }
+
+
+    }
+
+    h3 {
+      font-weight: 500;
+      font-size: 1.4rem;
+      text-align: center;
+
+      span {
+        display: block;
+        font-weight: 300;
+      }
+    }
+
+    h4 {
+      font-weight: 500;
+      font-size: 1.3rem;
+      text-align: center;
+
+      span {
+        display: block;
+        font-weight: 300;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

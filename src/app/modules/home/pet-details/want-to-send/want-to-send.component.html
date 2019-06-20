@@ -1,68 +1,102 @@
-<h2>I want to send my</h2>
-<ul>
-  <li>
-    <div>
-      <i class="icon dog"></i>
-      <p>DOG</p>
-    </div>
-  </li>
-  <li>
-    <div>
-      <i class="icon cat"></i>
-      <p>CAT</p>
-    </div>
-  </li>
-  <li>
-    <div>
-      <i class="icon bird"></i>
-      <p>BIRD</p>
-    </div>
-  </li>
-  <li>
-    <div class="other">
-      <i class="icon other"></i>
-      <p>
-        <mcf-select mcfClass="other" [items]="cars" [closeOnSelect]="true" [clearable]="false" [bindLabel]="'name'"
-          [bindValue]="'id'" [(ngModel)]='value'>
-        </mcf-select>
-      </p>
-    </div>
-  </li>
-</ul>
+<div class="section-holder">
+  <h2>I want to send my</h2>
+  <ul>
+    <li>
+      <div>
+        <i class="icon dog"></i>
+        <p>DOG</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <i class="icon cat"></i>
+        <p>CAT</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <i class="icon bird"></i>
+        <p>BIRD</p>
+      </div>
+    </li>
+    <li>
+      <div class="other">
+        <i class="icon other"></i>
+        <p>
+          <mcf-select mcfClass="other" [items]="cars" [closeOnSelect]="true" [clearable]="false" [bindLabel]="'name'"
+            [bindValue]="'id'" [(ngModel)]='value'>
+          </mcf-select>
+        </p>
+      </div>
+    </li>
+  </ul>
+
+</div>
 
 
 <!-- Pet Details -->
 <h2>Pet Details</h2>
 <div class="row">
   <div class="col-xs-12 col-sm-5 col-md-3">
-    <mcf-input [placeholder]="'Duke'" [label]="'Name (optional)'" #inputOne></mcf-input>
+    <mcf-input [placeholder]="'Duke'" [label]="'Name (optional)'" [(ngModel)]='formData.name'></mcf-input>
   </div>
   <div class="col-xs-12 col-sm-5 col-md-3">
     <div class="mcf__label "> Breed</div>
     <mcf-select [items]="cars" [closeOnSelect]="true" [clearable]="false" [bindLabel]="'name'" [bindValue]="'id'"
-      [(ngModel)]='value'>
+      [(ngModel)]='formData.breed'>
     </mcf-select>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12 col-sm-5 col-md-3">
     <div class="mcf__label "> Age</div>
-    <mcf-datetime [options]="myOptions04" [enableClearButton]="true" [icon]='"acf_icon_date_picker"'
-      placeholder="Please select date">
+    <mcf-datetime [options]="myOptions04" [(ngModel)]="formData.age" [enableClearButton]="true"
+      [icon]='"acf_icon_date_picker"' placeholder="Please select date">
     </mcf-datetime>
   </div>
 
   <div class="col-xs-12 col-sm-5 col-md-3">
 
-    <mcf-value-selector id='valueSelector' [config]="valueConfig" [(value)]='val' (onChange)="onValueChange($event)">
+    <mcf-value-selector [config]="valueConfig" [(value)]='formData.selectedWeight' (onChange)="onValueChange($event)">
     </mcf-value-selector>
-    </mcf-value-selector>
+
   </div>
 
 
 
-  <div class="col-xs-12 col-sm-2 col-md-3">
-    <div class="mcf__label mcf__label"> &nbsp;</div>
-    <button class="mcf__btn -state-primary">Search</button>
+
+</div>
+
+
+<!-- Create Details -->
+<h2>Create Details</h2>
+<div class="row">
+  <div class="col-xs-12 col-sm-4 col-md-2">
+    <mcf-input [placeholder]="' 100 Series'" [(ngModel)]="formData.crateSeries">
+    </mcf-input>
+  </div>
+  <div class="col-xs-12 col-sm-5 col-md-4">
+    <mcf-input [placeholder]="'100 Series'" [(ngModel)]="formData.crateSize"></mcf-input>
+  </div>
+  <div class="col-xs-12 col-sm-2 col-md-2">
+
+    <button class="mcf__btn -state-primary" (click)="onButtonClick($event)"><i class="acf_icon_advance_search"></i>
+      Crate type
+    </button>
   </div>
 </div>
+
+
+<mcf-modal #theModal [acceptonenter]="true" [title]="'Select the crate type'" [transclude]="true" [closeenabled]="true"
+  [isfootervisible]="true" [isheadervisible]="true" [acceptlabel]="'Select'" [cancellabel]="'Cancel'" [modalwidth]="700"
+  [openAnimation]="'fadeIn'" [closeAnimation]="'fadeOut'" [closeonoutsideclick]="false"
+  [headerbackgroundcolor]="'rgb(236, 236, 236)'" [closeicon]="'acf_icon_close_1'">
+  <acl-crate-type-list [inputData]="crateTypeInputData" (outputData)="crateTypeOutputData($event)">
+  </acl-crate-type-list>
+</mcf-modal>
+
+<button class="mcf__btn -state-primary" (click)="submitForm()">
+  Submit Form
+</button>
+
+<pre>{{formData | json}}</pre>
