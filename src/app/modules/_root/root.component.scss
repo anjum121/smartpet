@@ -1,0 +1,7 @@
+@import 'utils';
+
+.box-shadow {
+  @include box_shadow(1);
+  background: #fff;
+  padding: 1.5rem;
+}

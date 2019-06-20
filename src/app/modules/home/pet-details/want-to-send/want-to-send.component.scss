@@ -1,0 +1,104 @@
+$iconPath :"./../../../../../assets/icons/";
+$boxSize: 150px;
+
+@import '../../../../../styles/_configuration.scss';
+
+h2 {
+  font-weight: 300;
+  color: $brandblue;
+  font-size: 2.4rem;
+}
+
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+
+  li {
+    display: flex;
+    justify-content: center;
+    max-width: $boxSize;
+    width: $boxSize;
+    height: $boxSize;
+    max-height: $boxSize;
+    align-content: center;
+    background: #ddd;
+    margin-left: 1rem;
+    border-radius: 1rem;
+    background: radial-gradient(circle, rgb(236, 239, 253) 0%, rgb(228, 225, 225) 100%);
+    transition: all 0.5s ease;
+
+    &:hover {
+      background: radial-gradient(circle, rgb(208, 210, 219) 0%, rgb(196, 196, 196) 100%);
+      transition: all 0.5s ease;
+    }
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    p {
+      text-transform: uppercase;
+      font-size: 2rem;
+      margin: 0;
+      color: rgb(102, 102, 102);
+    }
+  }
+
+}
+
+
+.icon {
+  display: block;
+  text-indent: -9999px;
+  width: 45px;
+  height: 45px;
+
+  &.dog {
+    background: url(#{$iconPath}dog.svg);
+    background-size: 45px 45px;
+  }
+
+  &.cat {
+    background: url(#{$iconPath}cat.svg);
+    background-size: 45px 45px;
+  }
+
+  &.bird {
+    background: url(#{$iconPath}bir.svg);
+    background-size: 45px 45px;
+  }
+
+  &.other {
+    background: url(#{$iconPath}more.svg);
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
+:host ::ng-deep .other {
+  .mcf-select {
+    padding-bottom: 0;
+    padding-top: 1rem;
+    font-size: 1.4rem;
+  }
+
+  .mcf-select .ng-select .ng-select-container {
+    height: 2.6rem;
+  }
+}
+
+:host ::ng-deep {
+  mcf-value-selector mcf-label div.mcf__label {
+    padding: .4rem 0 .0rem;
+  }
+}

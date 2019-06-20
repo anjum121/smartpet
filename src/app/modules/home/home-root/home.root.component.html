@@ -1,0 +1,10 @@
+<mcf-tabs-holder (onChange)="onTabChange($event)" [tabType]="'card-type2'">
+  <mcf-tab tabTitle="New Booking">
+    <router-outlet name="new"></router-outlet>
+  </mcf-tab>
+
+  <mcf-tab tabTitle="Existing Booking">
+    <router-outlet name="old"></router-outlet>
+  </mcf-tab>
+
+</mcf-tabs-holder>

@@ -1,0 +1,20 @@
+<div class="flex-body-container">
+  <accelya-menu></accelya-menu>
+  <div class="mcf-min-body ">
+    <div class="container box-shadow">
+      <!-- <div style="text-align:center">
+
+        <h1><i class="acf_icon_accelya_footer"></i></h1>
+        <button class="mcf__btn -state-grey" (click)="goToPage('home')">Home</button>
+        <button class="mcf__btn -state-primary" (click)="goToPage('profile')">Profile</button>
+      </div> -->
+
+      <router-outlet></router-outlet>
+
+    </div>
+  </div>
+
+  <mcf-footer id="mcf-footer" [termsAndConditions]="termsAndConditions" [privacyPolicy]="privacyPolicy">
+  </mcf-footer>
+
+</div>

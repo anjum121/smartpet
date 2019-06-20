@@ -1,0 +1,17 @@
+$font-path: '~mcf-theme/fonts';
+$font-icons-path: $font-path;
+$img-path: '~mcf-theme/img';
+
+@import "configuration";
+@import '~mcf-theme/main';
+@import 'shared';
+
+body {
+  background: lighten($brand-grey, 40);
+}
+
+.mcf-footer-holder {
+  .row {
+    margin: 0;
+  }
+}
